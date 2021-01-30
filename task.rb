@@ -119,7 +119,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  puts user_data.merge(update_data)
+  user_data.merge!(update_data)
+  p user_data
 end
 
 def q14
@@ -135,18 +136,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  if data1.has_key?(:age)
-    puts "OK"
-  else 
-    puts "NG"
-  end
-
-  if data2.has_key?(:age)
-    puts "ok"
-  else
-    puts "NG"
-  end
-
+  puts data1.has_key?(:age) ? "OK" : "NG"
+  puts data2.has_key?(:age) ? "OK" : "NG"
 end
 
 def q16
