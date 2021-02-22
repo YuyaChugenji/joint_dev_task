@@ -156,7 +156,7 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
     @gender = params[:gender]
@@ -183,16 +183,16 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
 
   def introduce
     if  @age  >= 11
-      print "こんにちは、#{@name}と申します。宜しくお願いいたします。"
-    elsif 
-      print"はいさいまいど〜、#{@name}です！！！"
+      "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+    else
+      "はいさいまいど〜、#{@name}です！！！"
     end
   end
 end
@@ -208,15 +208,10 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  attr_reader :name
+  def initialize(name:)
     @name = name
   end
-
-  def name
-    @name.values
-  end
-
 end
 
 def q19
@@ -236,7 +231,7 @@ end
 
 class Zoo
   # 以下に回答を記載
-  def initialize(params)
+  def initialize(**params)
     @entry_fee = params[:entry_fee]
   end
 
